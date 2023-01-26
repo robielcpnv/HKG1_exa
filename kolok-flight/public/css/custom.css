@@ -1,0 +1,35 @@
+body { padding-top: 55px; }
+.row {margin-top: 15px;}
+h1 { margin-bottom: 20px; }
+
+a.navbar-brand { padding-top: 1px; }
+
+.offer-item img { max-height: 200px; }
+.image-item img { height: 100px; }
+
+.stars { color: #84688f; font-weight: bold; font-size: 1.5em; }
+.stars .rating { float: right; }
+
+/* Author: Facundo Corradini https://codepen.io/facundocorradini/pen/MQmoLR */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.rating > input { display: none; }
+.rating > label {
+  position: relative;
+  cursor: pointer;
+}
+.rating > label::before {
+  content: "\2605";
+  position: absolute;
+  opacity: 0;
+}
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+.rating > input:checked ~ label:before {
+  opacity: 1;
+}
+.rating:hover > input:checked ~ label:before { opacity: 0.4; }
